@@ -1,8 +1,8 @@
-import React,{UseEffect} from 'react';
+import React,{useEffect} from 'react';
 import './App.css';
 import {getQuizDetails} from './services/quiz_service'
 function App() {
-  UseEffect(() => {
+  useEffect(() => {
     getQuizDetails(5,'easy');
   },[]);
   return (
