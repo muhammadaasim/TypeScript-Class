@@ -5,6 +5,7 @@ import {QuestionType} from '../types/quiz_types'
 import QuestionCard from './Components/QuestionCard'
 function App() {
   let [quiz,setQuiz]=useState<QuestionType[]>([])
+  let [currentStep,setCurrentStep]=useState(0);
   useEffect(() => {
    async function fetchData(){
       const questions:QuestionType[]= await getQuizDetails(5,'easy');
@@ -12,14 +13,19 @@ function App() {
     }
     fetchData();
   },[]);
-  
+const handleSubmit=(e:React.FormEvent<EventTarget>)=>{
+  e.preventDefault();
+setCurrentStep(++currentStep);
+}  
+
   if(!quiz.length)
   return <h3>Loading ...</h3>
   return (
     <div className="App">
       <QuestionCard
-      options={quiz[0].option}
-      question={quiz[0].question} 
+      options={quiz[currentStep].option}
+      question={quiz[currentStep ].question} 
+      callback={handleSubmit}
       />
     </div>
   );
