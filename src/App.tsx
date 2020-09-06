@@ -13,11 +13,14 @@ function App() {
     }
     fetchData();
   },[]);
+  
+  if(!quiz.length)
+  return <h3>Loading ...</h3>
   return (
     <div className="App">
       <QuestionCard
       options={quiz[0].option}
-      questions={quiz[0].question} 
+      question={quiz[0].question} 
       />
     </div>
   );

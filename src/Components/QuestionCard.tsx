@@ -1,9 +1,8 @@
 import React from 'react'
-// import {QuestionType} from '../../types/quiz_types'
-const QuestionCard:React.FC<any>= ({questions,  options
-}) => 
+import {questionPropsType} from '../../types/quiz_types'
+const QuestionCard:React.FC<questionPropsType>= ({question,options }) => 
 {
-    console.log(questions,options);
+    console.log(question,options);
     return (
         <div className="question-container">
             <h1>Question Container</h1>
