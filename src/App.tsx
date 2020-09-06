@@ -8,7 +8,6 @@ function App() {
   useEffect(() => {
    async function fetchData(){
       const questions:QuestionType[]= await getQuizDetails(5,'easy');
-      console.log(questions);
       setQuiz(questions)
     }
     fetchData();
