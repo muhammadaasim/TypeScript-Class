@@ -13,7 +13,7 @@ function App() {
     }
     fetchData();
   },[]);
-const handleSubmit=(e:React.FormEvent<EventTarget>)=>{
+const handleSubmit=(e:React.FormEvent<EventTarget>,userans:string)=>{
   e.preventDefault();
 setCurrentStep(++currentStep);
 }  

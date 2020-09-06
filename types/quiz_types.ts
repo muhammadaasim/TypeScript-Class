@@ -15,5 +15,5 @@ export type QuestionType={
 export type questionPropsType={
     question:string
     options:string[]
-    callback: (e:React.FormEvent<EventTarget>)=>void
+    callback: (e:React.FormEvent<EventTarget>,userans:string)=>void
 }
