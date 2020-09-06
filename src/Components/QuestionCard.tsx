@@ -1,5 +1,6 @@
 import React from 'react'
 import {questionPropsType} from '../../types/quiz_types'
+import '../App.css'
 const QuestionCard:React.FC<questionPropsType>= ({question,options }) => 
 {
     console.log(question,options);
@@ -11,11 +12,13 @@ const QuestionCard:React.FC<questionPropsType>= ({question,options }) =>
             <form>
                 {
                     options.map((opt:string, ind:number)=>{
-                    return(
+                       return(
+                           <div className="q-card" key={ind}>
                         <label>
                             <input type="radio" name="opt" value={opt}/>
                         {opt}                    
                         </label>
+                        </div>
                     )
                     }
                     )
