@@ -17,7 +17,7 @@ const QuestionCard: React.FC<questionPropsType> = ({ question, options, callback
                         return (
                             <div className="q-card" key={ind}>
                                 <label>
-                                    <input type="radio" name="option" value={opt} onChange={handleSelection}/>
+                                    <input type="radio" name="option" value={opt} onChange={handleSelection} checked={selectedAns===opt} required/>
                                     {opt}
                                 </label>
                             </div>
