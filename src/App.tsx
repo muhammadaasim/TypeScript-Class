@@ -24,9 +24,8 @@ function App() {
     if(currentStep!==quiz.length-1)
     setCurrentStep(++currentStep);
     else{
-    alert("Quiz Complted");
+    alert("Quiz Complted You have scored "+score+" Out of "+quiz.length);
       setCurrentStep(0)
-      alert("You have scored : "+score)
       setScore(0);
   }
   }
