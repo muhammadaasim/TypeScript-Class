@@ -14,6 +14,7 @@ function App() {
     }
     fetchData();
   }, []);
+
   if (!quiz.length)
   return <h3>Loading ...</h3>
   const handleSubmit = (e: React.FormEvent<EventTarget>, userans: string) => {
@@ -29,13 +30,21 @@ function App() {
       setScore(0);
   }
   }
-  return (
-    <div className="App">
-      <QuestionCard
+  function start()
+  {
+  return(
+  <div>
+  <QuestionCard
         options={quiz[currentStep].option}
         question={quiz[currentStep].question}
         callback={handleSubmit}
       />
+  </div>
+);
+}
+  return (
+    <div className="App">
+      <button onClick={()=>start()}>start</button>   
     </div>
   );
 }
